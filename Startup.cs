@@ -8,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using ParkAPI.Folder;
+using ParkAPI.ParkMapper;
 using ParkAPI.Repository;
 using System;
 using System.Collections.Generic;
@@ -30,6 +31,7 @@ namespace ParkAPI
         {
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Path")));
             services.AddScoped<INationalPark, NationalPark>();
+            services.AddAutoMapper(typeof(ParkMapping));
             services.AddControllers();
         }
 
