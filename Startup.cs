@@ -12,7 +12,9 @@ using ParkAPI.ParkMapper;
 using ParkAPI.Repository;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 
 namespace ParkAPI
@@ -32,6 +34,23 @@ namespace ParkAPI
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Path")));
             services.AddScoped<INationalParkRepository, NationalParkRepository>();
             services.AddAutoMapper(typeof(ParkMapping));
+            services.AddSwaggerGen(options =>{
+                options.SwaggerDoc("NationalParksAPI",
+                new Microsoft.OpenApi.Models.OpenApiInfo(){
+                    Title = "Parky API",
+                    Version = "1",
+                    Description = "National Parks in Nigeria",
+                    Contact = new Microsoft.OpenApi.Models.OpenApiContact()
+                    {
+                        Email = "ogbonnasydney@gmail.com",
+                        Name = "Ogbonna Ikenna",
+                        Url = new Uri("")
+                    }
+                });
+                var xmlCommentsFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var commentsPath = Path.Combine(AppContext.BaseDirectory, xmlCommentsFile);
+                options.IncludeXmlComments(commentsPath);
+            });
             services.AddControllers();
         }
 
@@ -44,8 +63,13 @@ namespace ParkAPI
             }
 
             app.UseHttpsRedirection();
-
             app.UseRouting();
+            app.UseSwagger();
+            app.UseSwaggerUI(options =>
+            {
+                options.SwaggerEndpoint("/swagger/NationalParksAPI/swagger.json", "NationalPark API");
+                options.RoutePrefix = "";
+            });
 
             app.UseAuthorization();
 

@@ -23,6 +23,11 @@ namespace ParkAPI.Controllers
             _nationalPark = nationalPark;
             _mapper = mapper;
         }
+
+        /// <summary>
+        /// Get List of National Parks
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IActionResult GetNationalParks(){
             var parks = _nationalPark.GetNationalParks();
@@ -38,6 +43,12 @@ namespace ParkAPI.Controllers
             }
             return Ok(parkDto);
         }
+
+        /// <summary>
+        /// Get Individual National Park
+        /// </summary>
+        /// <param name="Id"> The Id of the National Park</param>
+        /// <returns></returns>
         [HttpGet("{Id}", Name ="GetNationalPark")]
         public IActionResult GetNationalPark(int Id)
         {
@@ -49,6 +60,12 @@ namespace ParkAPI.Controllers
             var parkDto = _mapper.Map<NationalParkDto>(park);
             return Ok(parkDto);
         }
+
+        /// <summary>
+        /// Add a Park the List of National parks
+        /// </summary>
+        /// <param name="nationalParkDto"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult CreateNationalPark([FromBody]NationalParkDto nationalParkDto)
         {
@@ -80,6 +97,13 @@ namespace ParkAPI.Controllers
                 }, 
                 nationalParkObj);
         }
+
+        /// <summary>
+        /// Update National park using the Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="nationalParkDto"></param>
+        /// <returns></returns>
         [HttpPatch("{id}", Name="UpdatePark")]
         public IActionResult UpdatePark(int id, NationalParkDto nationalParkDto)
         {
@@ -96,6 +120,12 @@ namespace ParkAPI.Controllers
             //_nationalPark.Save();
             return Ok();
         }
+
+        /// <summary>
+        /// Delete a Park
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
 
         [HttpDelete("{id}", Name = "DeletePark")]
         public IActionResult DeletePark(int id)

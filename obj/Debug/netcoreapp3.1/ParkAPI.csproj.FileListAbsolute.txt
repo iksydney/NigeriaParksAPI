@@ -61,3 +61,9 @@ C:\Users\hp\source\repos\ParkAPI\obj\Debug\netcoreapp3.1\ParkAPI.csproj.CopyComp
 C:\Users\hp\source\repos\ParkAPI\bin\Debug\netcoreapp3.1\AutoMapper.dll
 C:\Users\hp\source\repos\ParkAPI\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\hp\source\repos\ParkAPI\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\hp\source\repos\ParkAPI\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\hp\source\repos\ParkAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\hp\source\repos\ParkAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\hp\source\repos\ParkAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\hp\source\repos\ParkAPI\obj\Debug\netcoreapp3.1\ParkAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\hp\source\repos\ParkAPI\bin\Debug\netcoreapp3.1\ParkAPI.xml
