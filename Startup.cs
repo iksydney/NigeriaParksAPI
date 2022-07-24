@@ -43,8 +43,8 @@ namespace ParkAPI
                     Contact = new Microsoft.OpenApi.Models.OpenApiContact()
                     {
                         Email = "ogbonnasydney@gmail.com",
-                        Name = "Ogbonna Ikenna",
-                        Url = new Uri("")
+                        Name = "Ogbonna Ikenna"
+                        //Url = new Uri("")
                     }
                 });
                 var xmlCommentsFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
