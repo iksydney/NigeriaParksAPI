@@ -5,31 +5,31 @@ using System.Linq;
 
 namespace ParkAPI.Repository
 {
-    public class NationalPark : INationalPark
+    public class NationalParkRepository : INationalParkRepository
     {
         private readonly ApplicationDbContext _db;
-        public NationalPark(ApplicationDbContext db)
+        public NationalParkRepository(ApplicationDbContext db)
         {
             _db = db;
         }
-        public bool CreateNationalPark(Models.NationalPark nationalPark)
+        public bool CreateNationalPark(NationalPark nationalPark)
         {
             _db.NationalParks.Add(nationalPark);
             return Save();
         }
 
-        public bool DeleteNationalPark(Models.NationalPark nationalPark)
+        public bool DeleteNationalPark(NationalPark nationalPark)
         {
             _db.NationalParks.Remove(nationalPark);
             return Save();
         }
 
-        public ICollection<Models.NationalPark> GetNationalParks()
+        public ICollection<NationalPark> GetNationalParks()
         {
             return _db.NationalParks.OrderBy(x => x.Name).ToList();
         }
 
-        public Models.NationalPark GetNationalParks(int nationalParkId)
+        public NationalPark GetNationalParks(int nationalParkId)
         {
             return _db.NationalParks.FirstOrDefault(a => a.Id == nationalParkId);
         }
@@ -50,7 +50,7 @@ namespace ParkAPI.Repository
             return _db.SaveChanges() >= 0 ? true: false;
         }
 
-        public bool UpdateNationalPark(Models.NationalPark nationalPark)
+        public bool UpdateNationalPark(NationalPark nationalPark)
         {
             _db.NationalParks.Update(nationalPark);
             return Save();

@@ -30,7 +30,7 @@ namespace ParkAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Path")));
-            services.AddScoped<INationalPark, NationalPark>();
+            services.AddScoped<INationalParkRepository, NationalParkRepository>();
             services.AddAutoMapper(typeof(ParkMapping));
             services.AddControllers();
         }

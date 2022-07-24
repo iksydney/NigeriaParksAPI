@@ -10,7 +10,7 @@ using ParkAPI.Folder;
 namespace ParkAPI.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220722125538_ParkAPI")]
+    [Migration("20220722150705_ParkAPI")]
     partial class ParkAPI
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -21,7 +21,7 @@ namespace ParkAPI.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("ParkAPI.Models.NationalParks", b =>
+            modelBuilder.Entity("ParkAPI.Models.NationalPark", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
