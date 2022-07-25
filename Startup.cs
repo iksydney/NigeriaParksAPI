@@ -33,6 +33,7 @@ namespace ParkAPI
         {
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Path")));
             services.AddScoped<INationalParkRepository, NationalParkRepository>();
+            services.AddScoped<ITrailRepository, TrailRepository>();
             services.AddAutoMapper(typeof(ParkMapping));
             services.AddSwaggerGen(options =>{
                 options.SwaggerDoc("NationalParksAPI",
