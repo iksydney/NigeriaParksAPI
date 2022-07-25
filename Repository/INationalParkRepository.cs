@@ -3,7 +3,9 @@ using System.Collections.Generic;
 
 namespace ParkAPI.Repository
 {
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
     public interface INationalParkRepository
+
     {
         ICollection<NationalPark> GetNationalParks();
         NationalPark GetNationalParks(int nationalParkId);
@@ -16,3 +18,4 @@ namespace ParkAPI.Repository
 
     }
 }
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member

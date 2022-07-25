@@ -16,11 +16,15 @@ namespace ParkAPI.Controllers
     [Route("api/nationalparks")]
     [ApiController]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
     public class NationalParksController : ControllerBase
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
     {
         private readonly INationalParkRepository _nationalPark;
         private readonly IMapper _mapper;
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
         public NationalParksController(INationalParkRepository nationalPark, IMapper mapper)
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
         {
             _nationalPark = nationalPark;
             _mapper = mapper;
@@ -66,6 +70,14 @@ namespace ParkAPI.Controllers
                 return NotFound();
             }
             var parkDto = _mapper.Map<NationalParkDto>(park);
+            /*Without AutoMapper*/
+            /*var parksDto = new NationalParkDto()
+            {
+                Established = park.Established,
+                Id = Id,
+                Name = park.Name,
+                State = park.State,
+            };*/
             return Ok(parkDto);
         }
 

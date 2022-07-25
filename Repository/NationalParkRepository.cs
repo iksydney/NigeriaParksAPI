@@ -5,6 +5,7 @@ using System.Linq;
 
 namespace ParkAPI.Repository
 {
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
     public class NationalParkRepository : INationalParkRepository
     {
         private readonly ApplicationDbContext _db;
@@ -47,7 +48,9 @@ namespace ParkAPI.Repository
 
         public bool Save()
         {
+#pragma warning disable IDE0075 // Simplify conditional expression
             return _db.SaveChanges() >= 0 ? true: false;
+#pragma warning restore IDE0075 // Simplify conditional expression
         }
 
         public bool UpdateNationalPark(NationalPark nationalPark)
@@ -57,3 +60,4 @@ namespace ParkAPI.Repository
         }
     }
 }
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
