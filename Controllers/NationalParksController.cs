@@ -13,8 +13,10 @@ using ParkAPI.Repository;
 
 namespace ParkAPI.Controllers
 {
-    [Route("api/nationalparks")]
+    [Route("api/v{version:apiVersion}/nationalparks")]
+    //[Route("api/nationalparks")]
     [ApiController]
+    //[ApiExplorerSettings(GroupName= "NationalParksAPI")]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
     public class NationalParksController : ControllerBase

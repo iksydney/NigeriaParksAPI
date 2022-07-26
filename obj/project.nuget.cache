@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "l6yJBmXmDezRq8rox6f5N/r4od5lrInpxgpjgD6DjQ2qMu2LDmBZNh+lINVFz/exQHDLO3w1aMhMp5R3R5N5Vw==",
+  "dgSpecHash": "3dQRC/lRsoUIH4VzTMbJNmKfFalrrv/1sbgfXYhcDZkIoiu51NCrWZfRpQEgtVOIOzl+cA+i0CTPqtvlA6tSHw==",
   "success": true,
   "projectFilePath": "C:\\Users\\hp\\source\\repos\\ParkAPI\\ParkAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hp\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\hp\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
+    "C:\\Users\\hp\\.nuget\\packages\\microsoft.aspnetcore.mvc.versioning\\5.0.0\\microsoft.aspnetcore.mvc.versioning.5.0.0.nupkg.sha512",
+    "C:\\Users\\hp\\.nuget\\packages\\microsoft.aspnetcore.mvc.versioning.apiexplorer\\5.0.0\\microsoft.aspnetcore.mvc.versioning.apiexplorer.5.0.0.nupkg.sha512",
     "C:\\Users\\hp\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\hp\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.1\\microsoft.bcl.hashcode.1.1.1.nupkg.sha512",
     "C:\\Users\\hp\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

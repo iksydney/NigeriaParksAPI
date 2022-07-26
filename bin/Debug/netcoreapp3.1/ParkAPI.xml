@@ -39,5 +39,46 @@
             <param name="id"></param>
             <returns></returns>
         </member>
+        <member name="M:ParkAPI.Controllers.NationalParksV2Controller.GetNationalParks">
+            <summary>
+            Get List of National Parks
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ParkAPI.Controllers.TrailsController.GetTrails">
+            <summary>
+            Get List of Trails 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ParkAPI.Controllers.TrailsController.GetTrail(System.Int32)">
+            <summary>
+            Get Individual Trail
+            </summary>
+            <param name="Id"> The Id of the Trail</param>
+            <returns></returns>
+        </member>
+        <member name="M:ParkAPI.Controllers.TrailsController.CreateTrail(ParkAPI.Dtos.TrailCreateDto)">
+            <summary>
+            Add a Park the List of Trail
+            </summary>
+            <param name="trailDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ParkAPI.Controllers.TrailsController.UpdateTrail(System.Int32,ParkAPI.Dtos.TrailUpdateDto)">
+            <summary>
+            Update trail using the Id
+            </summary>
+            <param name="id"></param>
+            <param name="TrailDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ParkAPI.Controllers.TrailsController.DeleteTrail(System.Int32)">
+            <summary>
+            Delete a Trail
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
     </members>
 </doc>

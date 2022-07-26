@@ -13,8 +13,10 @@ using ParkAPI.Repository;
 
 namespace ParkAPI.Controllers
 {
-    [Route("api/nationalparks")]
+    //[Route("api/Trails")]
+    [Route("api/v{version:apiVersion}/trails")]
     [ApiController]
+    //[ApiExplorerSettings(GroupName = "NationalParkTrails")]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
     public class TrailsController : ControllerBase
@@ -31,7 +33,7 @@ namespace ParkAPI.Controllers
         }
 
         /// <summary>
-        /// Get List of National Parks
+        /// Get List of Trails 
         /// </summary>
         /// <returns></returns>
         [HttpGet]
@@ -53,9 +55,9 @@ namespace ParkAPI.Controllers
         }
 
         /// <summary>
-        /// Get Individual National Park
+        /// Get Individual Trail
         /// </summary>
-        /// <param name="Id"> The Id of the National Park</param>
+        /// <param name="Id"> The Id of the Trail</param>
         /// <returns></returns>
         [ProducesResponseType(200, Type = typeof(List<TrailDto>))]
         [ProducesResponseType(400)]
@@ -82,7 +84,7 @@ namespace ParkAPI.Controllers
         }
 
         /// <summary>
-        /// Add a Park the List of National parks
+        /// Add a Park the List of Trail
         /// </summary>
         /// <param name="trailDto"></param>
         /// <returns></returns>
@@ -92,7 +94,7 @@ namespace ParkAPI.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
 
         [HttpPost]
-        public IActionResult CreateTrail([FromBody]TrailDto trailDto)
+        public IActionResult CreateTrail([FromBody]TrailCreateDto trailDto)
         {
             if(trailDto == null)
             {
@@ -124,16 +126,16 @@ namespace ParkAPI.Controllers
         }
 
         /// <summary>
-        /// Update National park using the Id
+        /// Update trail using the Id
         /// </summary>
         /// <param name="id"></param>
         /// <param name="TrailDto"></param>
         /// <returns></returns>
-        [HttpPatch("{id}", Name="UpdatePark")]
+        [HttpPatch("{id}", Name="UpdateTrail")]
         [ProducesResponseType(204)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public IActionResult UpdateTrail(int id, TrailDto trailDto)
+        public IActionResult UpdateTrail(int id, TrailUpdateDto trailDto)
         {
             if(trailDto == null || id != trailDto.Id)
             {
@@ -150,7 +152,7 @@ namespace ParkAPI.Controllers
         }
 
         /// <summary>
-        /// Delete a Park
+        /// Delete a Trail
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
